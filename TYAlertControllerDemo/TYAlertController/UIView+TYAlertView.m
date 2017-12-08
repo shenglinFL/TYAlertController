@@ -102,6 +102,19 @@
     [viewController presentViewController:alertController animated:YES completion:nil];
 }
 
+- (void)showInController:(UIViewController *)viewController preferredStyle:(TYAlertControllerStyle)preferredStyle backgoundTapDismissEnable:(BOOL)backgoundTapDismissEnable keyboardObserverInvalid:(BOOL)keyboardObserverInvalid {
+    
+    if (self.superview) {
+        [self removeFromSuperview];
+    }
+    
+    TYAlertController *alertController = [TYAlertController alertControllerWithAlertView:self preferredStyle:preferredStyle];
+    alertController.keyboardObserverInvalid = keyboardObserverInvalid;
+    alertController.backgoundTapDismissEnable = backgoundTapDismissEnable;
+    [viewController presentViewController:alertController animated:YES completion:nil];
+    
+}
+
 - (void)hideInController
 {
     if ([self isShowInAlertController]) {

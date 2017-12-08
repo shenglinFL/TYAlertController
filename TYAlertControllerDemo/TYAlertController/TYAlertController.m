@@ -113,7 +113,7 @@
     
     [self.view layoutIfNeeded];
     
-    if (_preferredStyle == TYAlertControllerStyleAlert) {
+    if (_preferredStyle == TYAlertControllerStyleAlert && !_keyboardObserverInvalid) {
         // UIKeyboard Notification
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
@@ -219,6 +219,8 @@
     _backgoundTapDismissEnable = NO;
     _alertStyleEdging = 15;
     _actionSheetStyleEdging = 0;
+    
+    _keyboardObserverInvalid = NO;
 }
 
 - (void)configureAlertView

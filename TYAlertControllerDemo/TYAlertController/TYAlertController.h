@@ -51,6 +51,8 @@ typedef NS_ENUM(NSInteger, TYAlertTransitionAnimation) {
 // dismiss controller completed block
 @property (nonatomic, copy) void (^dismissComplete)(void);
 
+@property (nonatomic, assign) BOOL keyboardObserverInvalid;//关闭自适应键盘
+
 + (instancetype)alertControllerWithAlertView:(UIView *)alertView;
 
 + (instancetype)alertControllerWithAlertView:(UIView *)alertView preferredStyle:(TYAlertControllerStyle)preferredStyle;

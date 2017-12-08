@@ -31,6 +31,9 @@
 
 - (void)showInController:(UIViewController *)viewController preferredStyle:(TYAlertControllerStyle)preferredStyle transitionAnimation:(TYAlertTransitionAnimation)transitionAnimation backgoundTapDismissEnable:(BOOL)backgoundTapDismissEnable;
 
+// keyboardObserverInvalid default NO
+- (void)showInController:(UIViewController *)viewController preferredStyle:(TYAlertControllerStyle)preferredStyle backgoundTapDismissEnable:(BOOL)backgoundTapDismissEnable keyboardObserverInvalid:(BOOL)keyboardObserverInvalid;
+
 #pragma mark - show in window
 
 - (void)showInWindow;
